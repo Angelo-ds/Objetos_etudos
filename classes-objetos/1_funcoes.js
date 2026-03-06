@@ -1,5 +1,5 @@
 
-//função diletiva
+//função literal
 function porcentagem(v1,v2){
     const v3 = v1 * (v2/100)
    return v3
