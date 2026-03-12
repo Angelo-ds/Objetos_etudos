@@ -1,6 +1,6 @@
 // modo rice and beans
 class Senai {
-    constructor(codigo, cidade, anoConstrucao, quantidadedeCursos,statusFuncionamento){
+    constructor(codigo, cidade, anoConstrucao, quantidadedeCursos){
       this.codigo = codigo;
       this.cidade = cidade;
       this.anoConstrucao = anoConstrucao; 
