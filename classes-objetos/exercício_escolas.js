@@ -51,7 +51,7 @@ escolaA.fecharEscola();
 
 
 
-
+// pra mim estudar depois
 
 // MODO AVANÇADO
 // class Senai {
