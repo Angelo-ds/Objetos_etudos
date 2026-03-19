@@ -4,9 +4,31 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Comparar Escolas</title>
-    <script src="./8_testes-math.js" defer></script>
+    <script src="./8_math.js" defer></script>
 </head>
 <body>
-    
+    <div class="sorteio"></div>
+        <h1>Sorteador de Número</h1>
+        <form>
+            <div class="sorteio__inputs">
+                <form class="sorteio__form">
+
+                    <label for="min">Insira o valor Mínimo</label>
+                    <input class="sorteio__input--min" type="number" id="min" name="min" placeholder="0"/>
+
+                    <label>Insira o valor Máximo</label>
+                    <input class="sorteio__input--max" type="number" id="max" name="max"  placeholder="1"/>
+            </div>
+
+            <div class="sorteio_acoes">
+                    <input class="sorteio__botao--sortear" type="submit" value="Sortear"></button>
+                    <input class="sorteio__botao--reset" type="reset" value="Novo Sorteio"></button>
+
+            </div>
+        </form>
+        <div class="sorteio__resultado">
+            <p class="sorteio__text--resultado"></p>
+        </div>
+        
 </body>
 </html>
