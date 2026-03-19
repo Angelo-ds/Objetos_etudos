@@ -4,20 +4,49 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Comparar Escolas</title>
+
     <script src="./8_math.js" defer></script>
+
+    <style>
+        body{
+            display: flex;
+            text-align: center;
+            flex-direction: column;
+            height: 100vh;
+        }
+        .sorteio{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 25px;
+            height: 25vh;
+        }
+        .sorteio__inputs{
+            flex-direction: column;
+
+        }
+        .sorteio__botao--sortear{
+            margin-right: 250px;
+
+        }
+        .sorteio__botao--resetar{
+            margin-left: 250px;
+            
+        }
+</style>
 </head>
 <body>
     <div class="sorteio"></div>
         <h1>Sorteador de Número</h1>
-        <form>
+        <form class="sorteio__form">
             <div class="sorteio__inputs">
                 <form class="sorteio__form">
 
                     <label for="min">Insira o valor Mínimo</label>
-                    <input class="sorteio__input--min" type="number" id="min" name="min" placeholder="0"/>
+                    <input class="sorteio__input--min" type="text" id="min" name="min" placeholder="0"/>
 
                     <label>Insira o valor Máximo</label>
-                    <input class="sorteio__input--max" type="number" id="max" name="max"  placeholder="1"/>
+                    <input class="sorteio__input--max" type="text" id="max" name="max"  placeholder="1"/>
             </div>
 
             <div class="sorteio_acoes">
@@ -28,7 +57,57 @@
         </form>
         <div class="sorteio__resultado">
             <p class="sorteio__text--resultado"></p>
-        </div>
+        </div>        
         
+        
+        <script>
+            const form = document.querySelector('.sorteio__form');
+            const inputMin = document.querySelector('.sorteio__input--min');
+            const inputMax = document.querySelector('.sorteio__input--max');
+            const resultado = document.querySelector('.sorteio__text--resultado');
+            //o trim pega os numeros que o usuario inseriu
+
+
+            form.addEventListener('submit', (event) =>{
+                event.preventDefault() //previne o recarregamento
+                resultado.style.display = "block";
+
+            const max =inputMax.value.trim();
+            const min = inputMin.value.trim();
+
+            if (min ==='' || max ===''){
+                resultado.textContent = 'Preencha os dois Campos.';
+                return;
+            }
+
+            const numeroMin = Number(min);
+            const numeroMax = Number(max);
+
+
+
+            if (isNaN(numeroMin) || isNaN(numeroMax)){
+                resultado.textContent ='Digite apenas números'
+                return;
+
+            }
+
+            if (numeroMin > numeroMax) {
+                resultado.textContent = 'O mínimo não pode ser maior que o máximo';
+                return;
+            }
+
+
+            const numeroSorteado = Math.floor(Math.random() * (numeroMax - numeroMin + 1)) + numeroMin;
+
+            resultado.textContent = `Número sorteado ${numeroSorteado}`;
+    
+        });
+
+        form.addEventListener('reset', (event) =>{
+            resultado.style.display = 'none';
+            inputMin.focus()
+        });
+
+        </script>
 </body>
 </html>

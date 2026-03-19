@@ -23,9 +23,9 @@
 // console.log(`Numero sorteado: ${numeroSorteado}`);
 
 
-const gerarNumeroAleatorio = (min = 2, max = 30) => {
-    return Math.floor(Math.random() * (max-min+1)) +min;
-}
+// const gerarNumeroAleatorio = (min = 2, max = 30) => {
+//     return Math.floor(Math.random() * (max-min+1)) +min;
+// }
 
-console.log(gerarNumeroAleatorio());
-console.log(gerarNumeroAleatorio(10,15));
+// console.log(gerarNumeroAleatorio());
+// console.log(gerarNumeroAleatorio(10,15));
