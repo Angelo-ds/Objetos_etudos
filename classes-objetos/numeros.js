@@ -6,8 +6,6 @@ const sorteio = document.querySelector('.area__button');
 const limpar = document.querySelector('.sorteador__limpar');
 const mensagem = document.querySelector('.area_mensagem');
 
-mensagem.textContent('TESTEEEE');
-
 
 const atualizarValorSlider= () => {
     const min = Number(sliderMin.value);
@@ -25,8 +23,8 @@ const atualizarValorSlider= () => {
     
 
 };
-slider_max.addEventListener('input', atualizarValorSlider);
-slider_min.addEventListener('input', atualizarValorSlider);
+sliderMax.addEventListener('input', atualizarValorSlider);
+sliderMin.addEventListener('input', atualizarValorSlider);
 
 
 atualizarValorSlider()
@@ -35,7 +33,7 @@ atualizarValorSlider()
 
 const verificarNumero = () => {
     if (sliderMin  > sliderMax){
-        historico_lista.innerHTML('<li>O valor mínimo não pode ser maior que o valor máximo</li>')
+        historicoLista.innerHTML('<li>O valor mínimo não pode ser maior que o valor máximo</li>')
     }
 }
 
