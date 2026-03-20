@@ -87,3 +87,4 @@ sorteio.addEventListener('click', () => {
 
 // Evento do botão limpar
 limpar.addEventListener('click', limparHistorico);
+// desafio prever o erro do usuario
