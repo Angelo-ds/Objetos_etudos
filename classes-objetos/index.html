@@ -18,13 +18,14 @@
         <!--EMMET section.sorteador__intervalo.intervalo+section.sorteador__area.area+section.sorteador__historico.historico-->
         <section class="sorteador__intervalo intervalo">
 
-            <label class="intervalo__label" for="valor-minimo">Valor mínimo:<span class="intervalo__valor intervalo__slider--min"></span></label>
-            <input class="intervalo__slider intervalo__slider--min" type="range" name="valor-minimo" id="valor-minimo" min="1" max="100">
+            <label class="intervalo__label" for="valor-minimo">Valor mínimo:<span class="intervalo__valor intervalo__valor--min"></span></label>
+            <input class="intervalo__slider intervalo__slider--min" type="range" name="valor-minimo" id="valor-minimo" min="1" max="100" value="1">
 
-            <label class="intervalo__label" for="valor-maximo">Valor máximo:<span class="intervalo__valor intervalo__slider--max"></span></label>
-            <input class="intervalo__slider intervalo__slider--max" type="range" name="valor-maximo" id="valor-maximo" min="1" max="100">
+            <label class="intervalo__label" for="valor-maximo">Valor máximo:<span class="intervalo__valor intervalo__valor--max"></span></label>
+            <input class="intervalo__slider intervalo__slider--max" type="range" name="valor-maximo" id="valor-maximo" min="1" max="100" value="100">
 
         </section>
+
 
 
         <section class="sorteador__area area">
@@ -32,6 +33,7 @@
             <span class="area__numero">0</span>
         </section>
 
+        <span class="area_mensagem"></span>
 
         <section class="sorteador__historico historico">
             <h2 class="historico__title">Histórico</h2>
