@@ -5,7 +5,7 @@ const historicoLista = document.querySelector('.historico__lista')
 const sorteio = document.querySelector('.area__button');
 const limpar = document.querySelector('.sorteador__limpar');
 const mensagem = document.querySelector('.area_mensagem');
-
+isso = [2,2,2,2]
 
 const atualizarValorSlider= () => {
     const min = Number(sliderMin.value);
@@ -33,7 +33,7 @@ atualizarValorSlider()
 
 const verificarNumero = () => {
     if (sliderMin  > sliderMax){
-        historicoLista.innerHTML('<li>O valor mínimo não pode ser maior que o valor máximo</li>')
+        historicoLista.textContent('O numero mínimo não pode ser maior que o número máximo.')
     }
 }
 
@@ -46,9 +46,41 @@ const gerarNumeroAleatorio =(min,max) => {
 }
 
 const atualizarTexto = (elemento,valor) => {
-
+    elemento.textContent = valor;
 }
 
+atualizarTexto(elementoNumero,20)
+
+
+const criarItemHistorico = (numero) => {
+    const li = document.createElement('li');
+    li.textContent = numero;
+
+    li.addEventListener('click', () => {
+        navigator.clipboard.writeText(numero);
+    });
+
+    return li;
+}
+
+
+const atualizarHistorico = (lista, item, limite) => {
+
+    lista.prepend(item);
+
+    if (lista.children.length > limite) {
+        lista.removechild(lista.lastChild);
+    }
+
+};
+
+const limparHistorio = () =>{
+    if (confirm('Deseja realmente limpar o histórico de sorteios?')){
+        listaNumeros.textContent = '';
+        elementoNumero.textContent = '0'
+    }
+
+}
 
 
 
@@ -66,3 +98,4 @@ sorteio.addEventListener('click', () => {
 limpar.addEventListener('click', () => {
     alert('deu')
 });
+                                                                                                                  
