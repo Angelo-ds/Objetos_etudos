@@ -16,9 +16,27 @@ const atualizarValorSlider = () => {
     document.querySelector('.intervalo__valor--max').textContent = max;
 };
 
+//DESAFIO// Função de validação do intervalo //DESAFIO//
+const validarIntervalo = () => {
+    let min = Number(sliderMin.value);
+    let max = Number(sliderMax.value);
+
+    if (min > max) {
+        sliderMax.value = min;
+        mensagem.textContent = 'O valor mínimo não pode ser maior que o valor máximo';
+    } else if (max < min) {
+        sliderMin.value = max;
+        mensagem.textContent = 'O valor máximo não pode ser menor que o valor mínimo';
+    } else {
+        mensagem.textContent = '';
+    }
+
+    atualizarValorSlider();
+};
+
 // Eventos dos sliders
-sliderMax.addEventListener('input', atualizarValorSlider);
-sliderMin.addEventListener('input', atualizarValorSlider);
+sliderMax.addEventListener('input', validarIntervalo);
+sliderMin.addEventListener('input', validarIntervalo);
 
 // Executa ao iniciar
 atualizarValorSlider();
@@ -87,4 +105,3 @@ sorteio.addEventListener('click', () => {
 
 // Evento do botão limpar
 limpar.addEventListener('click', limparHistorico);
-// desafio prever o erro do usuario
